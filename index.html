@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Client</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WebSocket Client</h1>
+            <div id="connection-status" class="status disconnected">Disconnected</div>
+        </header>
+
+        <div class="connection-panel">
+            <div class="form-group">
+                <label for="server-url">Server URL:</label>
+                <input type="text" id="server-url" value="ws://localhost:3000" />
+                <button id="connect-btn">Connect</button>
+                <button id="disconnect-btn" disabled>Disconnect</button>
+            </div>
+            <div class="form-group">
+                <label for="user-id">User ID:</label>
+                <input type="text" id="user-id" placeholder="Enter your user ID" />
+                <button id="register-btn" disabled>Register</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="messages-panel">
+                <h2>Messages</h2>
+                <div id="messages-container"></div>
+            </div>
+
+            <div class="send-panel">
+                <div class="form-group">
+                    <label for="message-type">Message Type:</label>
+                    <select id="message-type">
+                        <option value="chat">Chat</option>
+                        <option value="notification">Notification</option>
+                        <option value="ping">Ping</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="target-user">Target User ID:</label>
+                    <input type="text" id="target-user" placeholder="Leave empty for broadcast" />
+                </div>
+                <div class="form-group">
+                    <label for="message-text">Message:</label>
+                    <textarea id="message-text" placeholder="Type your message here..."></textarea>
+                </div>
+                <button id="send-btn" disabled>Send Message</button>
+            </div>
+        </div>
+
+        <div class="connection-info">
+            <h3>Connection Details</h3>
+            <pre id="connection-details">Not connected</pre>
+        </div>
+    </div>
+
+    <script src="js/websocket.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
