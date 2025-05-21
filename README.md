@@ -2,9 +2,6 @@
 
 A user-friendly WebSocket client application with a web interface for testing WebSocket server connections, sending messages, and monitoring WebSocket communication.
 
-## 📷 Show Image
-*(แทรกรูปภาพหน้าจอ UI ที่นี่ ถ้ามี)*
-
 ---
 
 ## ✨ Features
