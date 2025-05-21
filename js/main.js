@@ -133,6 +133,11 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Client error:', error);
     });
     
+    // Add handler for pong messages
+    client.on('pong', (message) => {
+        ui.addMessage(`Pong received from server (timestamp: ${new Date(message.timestamp).toLocaleTimeString()})`, 'system');
+    });
+    
     // Initial message
     ui.addMessage('WebSocket Client initialized. Please connect to a server.', 'system');
 });
